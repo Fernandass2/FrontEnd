@@ -1,36 +1,35 @@
 function carregar_novidades() {
-    const livros_novidades = document.getElementById("livrosnovidades");
+    const livros_novidades = document.getElementById("produtosnovidades");
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listar")
+    fetch("http://127.0.0.1:5000/api/v1/listar/produto")
         .then((res) => res.json())
         .then((dados) => {
             dados.map((liv) => {
                 saida += `
-            <div class="livro">
-                <img src="${liv.foto1}" alt="Capa ${liv.nome}">
-                <h3>${liv.nome}</h3>
-                <p class="preco">R$${liv.preco}</p>
-                    <button>
-                        <img src="img/carrinho.png" alt="Carrinho para adicionar">
-                        <p>Adicionar ao carrinho</p>
-                    </button>
-            </div>`
+             <div class="produtos">
+              <img src="${liv.foto1}">
+              <h3>${liv.nome}</h3>
+              <p>${liv.preco}</p>
+              <a href=detalhes.html?id${liv.id}>Mais Detalhes</a>
+
+            </div>
+           `
             })
             livros_novidades.innerHTML = saida;
         })
-    carregar_maisvendidos()
+    carregar_produtomaisvendidos()
 
 }
 
 let pe = 0
 function rolarNovidadesEsquerda() {
-    if (pe < -2200) {
-        pe = -2200
+    if (pe < -700) {
+        pe = -700
     }
     else {
         pe -= 200;
     }
-    const livrosnovidades = document.getElementById("livrosnovidades");
+    const livrosnovidades = document.getElementById("produtosnovidades");
     livrosnovidades.style.marginLeft = `${pe}px`
     //testeconsole.log(livrosnovidades.style.marginLeft)
 }
@@ -42,46 +41,46 @@ function rolarNovidadesDireita() {
     else {
         pe += 200;
     }
-    const livrosnovidades = document.getElementById("livrosnovidades");
+    const livrosnovidades = document.getElementById("produtosnovidades");
     livrosnovidades.style.marginLeft = `${pe}px`
     // teste console.log(livrosnovidades.style.marginLeft)
 }
 
-function carregar_maisvendidos() {
-    const livros_maisvendidos = document.getElementById("livrosmaisvendidos");
+function carregar_produtomaisvendidos() {
+    const produtos_maisvendidos = document.getElementById("produtosmaisvendidos");
     let saida = "";
     fetch("http://127.0.0.1:5000/api/v1/produto/listarmaisvendidos")
         .then((res) => res.json())
         .then((dados) => {
             dados.map((liv) => {
                 saida += `
-            <div class="livro">
+            <div class="produtos">
                 <img src="${liv.foto1}" alt="Capa ${liv.nome}">
                 <h3>${liv.nome}</h3>
                 <p class="quantidade">Vendidos: ${liv.quantidade}</p>
                     
             </div>`
             })
-            livros_maisvendidos.innerHTML = saida;
+            produtos_maisvendidos.innerHTML = saida;
         })
     carregar_autores()
 
 }
 
 function carregar_autores() {
-    const livros_autores = document.getElementById("livrosautores");
+    const produtos_funcionario = document.getElementById("produtosfuncionarios");
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/autor/listar")
+    fetch("http://127.0.0.1:5000/api/v1/listar/funcionario")
         .then((res) => res.json())
         .then((dados) => {
             dados.map((liv) => {
                 saida += `
-            <div class="autor">
-                <img src="${liv.foto}" alt="Autor ${liv.nome}">
+            <div class="funcionarios">
+                <img src="${liv.foto}" alt="funcionario ${liv.nome}">
                 <h3>${liv.nome}</h3>                 
             </div>`
             })
-            livros_autores.innerHTML = saida;
+            produtos_funcionario.innerHTML = saida;
         })
 }
 
