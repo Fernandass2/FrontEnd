@@ -10,7 +10,7 @@ function carregar_novidades() {
               <img src="${liv.foto1}">
               <h3>${liv.nome}</h3>
               <p>${liv.preco}</p>
-              <a href=detalhes.html?id${liv.id}>Mais Detalhes</a>
+              <a href=detalhes.html?id=${liv.id}>Mais Detalhes</a>
 
             </div>
            `
