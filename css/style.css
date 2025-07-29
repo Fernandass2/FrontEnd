@@ -284,6 +284,123 @@ main {
 
 }
 
+#lstlivros{
+    display: flex;
+    flex-wrap: wrap;
+}
+.livpcgamer, 
+.livhardware, 
+.livmonitores, 
+.livgabinetes, 
+.livperifericos,
+.livoutros {
+    width: 23%;
+    margin: 10px;
+}
+.livpcgamer img,
+.livhardware img, 
+.livmonitores img, 
+.livgabinetes img, 
+.livperifericos img,
+.livoutros img{
+    width: 100%;
+    height: 280px;
+}
+.livpcgamer h3,
+.livhardware h3, 
+.livmonitores h3, 
+.livgabinetes h3, 
+.livperifericos h3,
+.livoutros h3{
+    font-family: 'Lucida Sans';
+    font-size: 12pt;
+}
+.livpreco{
+    font-family: 'Lucida Sans';
+    font-size:10pt;
+    font-weight: bold;
+    color: rgb(46, 3, 3)
+
+}
+.livpcgamer a,
+.livhardware a, 
+.livmonitores a, 
+.livgabinetes a, 
+.livperifericos a,
+.livoutros a{
+    font-family: 'Lucida Sans';
+    font-size: 10pt;
+    text-decoration: none;
+}
+
+#detalhes{
+    display: flex;
+
+}
+#div_capa img{
+    width: 300px;
+    height: 400px;
+}
+#div_miniatura{
+    display: flex;
+    justify-content: space-between;
+}
+#div_miniatura img{
+    width: 70px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#div_titulo_descricao{
+    padding: 0px 10px;
+}
+#div_titulo_descricao h3{
+    font-family: 'Lucida Sans';
+    font-size: 20pt;
+    margin-bottom: 30px;
+}
+#div_titulo_descricao p{
+    font-family: arial;
+    line-height: 20pt;
+}
+
+#div_carrinho{
+    text-align: right;
+}
+#div_carrinho p{
+    font-family: tahoma;
+    font-size: 20pt;
+    color: darkred;
+    margin-bottom: 100px;
+    font-weight: bold;
+}
+#div_carrinho button{
+    width: 200px;
+    background-color: rgb(11, 72, 185);
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    cursor: pointer;
+    padding: 20px 0px;
+    border-radius: 10px;
+}
+
+#div_qtd_itens{
+    background-color: red;
+    color:white;
+    font-weight: bold;
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    font-size: 9pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:-40px;
+    left: 80px;
+    display: none;
+}
 
 /*seta direita e seta esquerda*/
 .seta-esquerda-maisvendidos {
@@ -336,6 +453,14 @@ footer {
     font-size: 12pt;
     line-height: 18pt;
 }
+
+#cnpj {
+    color: #333;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 12pt;
+    line-height: 18pt;
+}
+
 
 #menufooter nav ul {
     list-style: none;

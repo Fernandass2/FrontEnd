@@ -17,6 +17,7 @@ function carregar_novidades() {
             })
             livros_novidades.innerHTML = saida;
         })
+        .catch((erro)=>{console.error(erro)})
     carregar_produtomaisvendidos()
 
 }
@@ -57,13 +58,15 @@ function carregar_produtomaisvendidos() {
             <div class="produtos">
                 <img src="${liv.foto1}" alt="Capa ${liv.nome}">
                 <h3>${liv.nome}</h3>
-                <p class="quantidade">Vendidos: ${liv.quantidade}</p>
+                <p class="quantidade">Procurados: ${liv.quantidade}</p>
                     
             </div>`
             })
             produtos_maisvendidos.innerHTML = saida;
         })
+        .catch((erro)=>{console.error(erro)})
     carregar_autores()
+
 
 }
 
@@ -82,102 +85,128 @@ function carregar_autores() {
             })
             produtos_funcionario.innerHTML = saida;
         })
+        .catch((erro)=>{console.error(erro)})
+
+        carregar_produtomaisvendidos()
 }
 
-function carregar_esporte() {
-    const livros_esporte = document.getElementById("lstlivros")
+function carregar_pcgamer() {
+    const lstlivros = document.getElementById("lstlivros")
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/Esporte")
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/PcGamer")
         .then((res) => res.json())
         .then((liv) => {
             liv.map((li) => {
                 saida += `
-            <div class="livesporte">
+            <div class="livpcgamer">
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
                 <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
-            livros_esporte.innerHTML = saida;
+            lstlivros.innerHTML = saida;
         })
+        .catch((erro)=>{console.error(erro)})
 
 }
-function carregar_ficcao() {
-    const livros_ficcao = document.getElementById("lstlivros")
+function carregar_hardware() {
+    const lstlivros= document.getElementById("lstlivros")
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/ficcao")
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/Hardware")
         .then((res) => res.json())
         .then((liv) => {
             liv.map((li) => {
                 saida += `
-            <div class="livficcao">
+            <div class="livhardware">
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
                 <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
-            livros_ficcao.innerHTML = saida;
+            lstlivros.innerHTML = saida;
         })
-
+        .catch((erro)=>{console.error(erro)})
 }
-function carregar_romance() {
-    const livros_romance = document.getElementById("lstlivros")
+
+
+
+function carregar_monitores() {
+    const lstlivros = document.getElementById("lstlivros")
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/romance")
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/Monitores")
         .then((res) => res.json())
         .then((liv) => {
             liv.map((li) => {
                 saida += `
-            <div class="livromance">
+            <div class="livmonitores">
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
                 <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
-            livros_romance.innerHTML = saida;
+            lstlivros.innerHTML = saida;
         })
-
+        .catch((erro)=>{console.error(erro)})
 }
-function carregar_fantasia() {
-    const livros_fantasia = document.getElementById("lstlivros")
+function carregar_gabinetes() {
+    const listar_gabinetes = document.getElementById("lstlivros")
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/fantasia")
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/Gabinetes")
         .then((res) => res.json())
         .then((liv) => {
             liv.map((li) => {
                 saida += `
-            <div class="livfantasia">
+            <div class="livgabinetes">
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
                 <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
-            livros_fantasia.innerHTML = saida;
+            lstlivros.innerHTML = saida;
         })
-
+        .catch((erro)=>{console.error(erro)})
 }
-function carregar_manga() {
-    const livros_manga = document.getElementById("lstlivros")
+function carregar_perifericos() {
+    const lstlivros = document.getElementById("lstlivros")
     let saida = "";
-    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/manga")
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/Perifericos")
         .then((res) => res.json())
         .then((liv) => {
             liv.map((li) => {
                 saida += `
-            <div class="livmanga">
+            <div class="livperifericos">
                 <img src="${li.foto1}">
                 <h3>${li.nome}</h3>
                 <p class=livpreco>R$ ${li.preco}</p>
                 <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
             </div>`
             })
-            livros_manga.innerHTML = saida;
+            lstlivros.innerHTML = saida;
         })
-
+        .catch((erro)=>{console.error(erro)})
+}
+function carregar_outros() {
+    const lstlivros = document.getElementById("lstlivros")
+    let saida = "";
+    fetch("http://127.0.0.1:5000/api/v1/produto/listarporcategoria/outros")
+        .then((res) => res.json())
+        .then((liv) => {
+            liv.map((li) => {
+                saida += `
+            <div class="livoutros">
+                <img src="${li.foto1}">
+                <h3>${li.nome}</h3>
+                <p class=livpreco>R$ ${li.preco}</p>
+                <a href=detalhes.html?id=${li.id}>Mais detalhe</a>                 
+            </div>`
+            })
+            lstlivros.innerHTML = saida;
+        })
+        .catch((erro)=>{console.error(erro)})
 }
 let nome_carrinho = "carrinho"
 let produto_no_carrinho = localStorage.getItem(nome_carrinho) ? JSON.parse(localStorage.getItem(nome_carrinho)) : [];
