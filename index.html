@@ -18,7 +18,7 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img src="img/logo1.png" alt="Logo"/></a>
+      <a class="navbar-brand" href="index.html"><img src="img/logo1.png" alt="Logo" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,7 +38,7 @@
           <a href="carrinho.html" class="carrinho">
             <img src="img/carrinho.png" alt="Carrinho de Compras">
           </a>
-          <a href="#" class="usuario" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <a href="#" class="usuario" data-bs-toggle="modal" data-bs-target="#modalLogin">
             <img src="img/usuario.png" alt="Usuário">
           </a>
         </div>
@@ -91,57 +91,53 @@
   </main>
 
 
-  
-  <!--Rodapé-->
-<footer>
-    <div id="endereco">
-        Rua Alameidas Verdadeira, 78 - Vila TA Certo<br>
-        CEP:15578-171 - São Paulo - SP - <br>
-        Tel.: 11-5555-9969 | 11-9858-5555<br>
-        Contato WhatsApp <a href="https://wa.me/55998102632"> 11-4002-8922</a>
-    </div>
-    <div id="menufooter">
-        <nav>
-            <ul>
-                <li><a href="#" class="titulo-menu">Categorias</a></li>
-                <li><a href="pcgamer.html">PC Gamer</a></li>
-                <li><a href="hardware.html">Hardware</a></li>
-                <li><a href="monitores.html">Monitores</a></li>
-                <li><a href="gabinetes.html">Gabinetes</a></li>
-                <li><a href="perifericos.html">Periféricos</a></li>
-                <li><a href="outros.html">Outros</a></li>
 
-            </ul>
-        </nav>
+  <!--Rodapé-->
+  <footer>
+    <div id="menufooter">
+      <nav>
+        <ul>
+          <li><a href="#" class="titulo-menu">Categorias</a></li>
+          <li><a href="pcgamer.html">PC Gamer</a></li>
+          <li><a href="hardware.html">Hardware</a></li>
+          <li><a href="monitores.html">Monitores</a></li>
+          <li><a href="gabinetes.html">Gabinetes</a></li>
+          <li><a href="perifericos.html">Periféricos</a></li>
+          <li><a href="outros.html">Outros</a></li>
+
+        </ul>
+      </nav>
     </div>
     <div id="redes-pagamento">
-        <div id="redes">
-            <a href="https://www.instagram.com/tecnologia_do_sanches/" target="_blank"> <img src="/img/instagram.png" alt="instagram"></a>
-            <a href="https://www.facebook.com/tecnologia_do_sanches/" target="_blank"> <img src="/img/facebook.png" alt="Facebook"></a>
-            <a href="https://www.youtube.com/@Espetacular_sanches" target="_blank"> <img src="/img/youtube.png" alt="Youtube"></a>
-        </div>
-        <div id="pagamento">
-            <img src="img/formaspagamento.png" alt="">
-        </div>
+      <div id="redes">
+        <a href="https://www.instagram.com/tecnologia_do_sanches/" target="_blank"> <img src="/img/instagram.png"
+            alt="instagram"></a>
+        <a href="https://www.facebook.com/tecnologia_do_sanches/" target="_blank"> <img src="/img/facebook.png"
+            alt="Facebook"></a>
+        <a href="https://www.youtube.com/@Espetacular_sanches" target="_blank"> <img src="/img/youtube.png"
+            alt="Youtube"></a>
+      </div>
+      <div id="pagamento">
+        <img src="img/formaspagamento.png" alt="">
+      </div>
     </div>
-<div id="cnpj">
-  <img src="img/logo1.png"><br>
-  TECSANCHES ATACADO E VAREJO DE PRODUTOS DE INFORMÁTICA LTDA <br>
-  CNPJ: 61.913.988/0001-74 | São Paulo-SP<br>
-  ATENDIMENTO <br>
-  De segunda a sexta das 8:30 às 12H / 13H às 18H<br>
-  SOMOS E-COMMERCE – NÃO TEMOS ATENDIMENTO LOCAL<br>
-  <img src="img/Powered-by.png">
-</div>
-</footer>
+    <div id="cnpj">
+      <img id="cnpjlogo" src="img/logo1.png"><br>
+      TECSANCHES ATACADO E VAREJO DE PRODUTOS DE INFORMÁTICA LTDA <br>
+      CNPJ: 61.913.988/0001-74 | São Paulo-SP<br>
+      De segunda a sexta das 8:30 às 12H / 13H às 18H<br>
+      SOMOS E-COMMERCE – NÃO TEMOS ATENDIMENTO LOCAL<br>
+      <img src="img/Powered-by.png">
+    </div>
+  </footer>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal de Login -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5" id="modalLoginLabel">Login</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
           <form onsubmit="return false">
@@ -152,12 +148,56 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" onclick="efetuarlogin()">Logar</button>
+          <a href="usuario.html"><button type="button" class="btn btn-secondary">Cadastrar-se</button></a>
         </div>
       </div>
     </div>
   </div>
 
- 
+  <!-- Modal de Cadastro -->
+  <div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalCadastroLabel">Cadastrar Usuário</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="txtnome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="txtnome" placeholder="Nome">
+          </div>
+          <div class="mb-3">
+            <label for="txtemail" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="txtemail" placeholder="E-mail">
+          </div>
+          <div class="mb-3">
+            <label for="txt-Cpf" class="form-label">CPF</label>
+            <input type="email" class="form-control" id="txtemail" placeholder="XXX.XXX.XXX-XX">
+          </div>
+          <div class="mb-3">
+            <label for="txt_telefone" class="form-label">Telefone</label>
+            <input type="email" class="form-control" id="txtemail" placeholder="+55 (12)34567-8901">
+          </div>
+          <div class="mb-3">
+            <label for="DataNas" class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control" id="txtemail" placeholder="00/00/0000">
+          </div> 
+          <div class="mb-3">
+            <label for="txt_endereco" class="form-label">Endereço</label>
+            <input type="email" class="form-control" id="txtemail" placeholder="Rua das Flores, 123 - Centro, São Paulo">
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" id="btnCadastrar">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
 
   <script src="js/scripts.js"></script>
@@ -168,7 +208,7 @@
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
 
- 
+
 
 
 </body>
